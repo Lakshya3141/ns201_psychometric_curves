@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.2.10),
-    on December 09, 2020, at 01:52
+    on December 09, 2020, at 03:29
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -36,7 +36,7 @@ os.chdir(_thisDir)
 
 # Store info about the experiment session
 psychopyVersion = '2020.2.10'
-expName = 'First_try'  # from the Builder filename that created this script
+expName = 'hue_diff'  # from the Builder filename that created this script
 expInfo = {'participant': '', 'session': '001'}
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
@@ -51,7 +51,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expNa
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='C:\\Users\\chauh\\Documents\\GitHub\\ns201_psychometric_curves\\First_try.py',
+    originPath='C:\\Users\\chauh\\Documents\\GitHub\\ns201_psychometric_curves\\experiment_setup_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
@@ -207,9 +207,9 @@ for thisComponent in InstructionsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials = data.TrialHandler(nReps=2, method='random', 
+trials = data.TrialHandler(nReps=20, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('bbg_bd.csv'),
+    trialList=data.importConditions('pbg_ru.csv'),
     seed=1, name='trials')
 thisExp.addLoop(trials)  # add the loop to the experiment
 thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
@@ -427,7 +427,7 @@ for thisTrial in trials:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 2 repeats of 'trials'
+# completed 20 repeats of 'trials'
 
 # get names of stimulus parameters
 if trials.trialList in ([], [None], None):
