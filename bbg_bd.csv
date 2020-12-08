@@ -1,0 +1,11 @@
+File,BGbase,Color_change,CorrAns
+images/bbg_bd_0.png,images/bbg_bd.png,235.0,up
+images/bbg_bd_1.png,images/bbg_bd.png,215.0,left
+images/bbg_bd_2.png,images/bbg_bd.png,195.0,up
+images/bbg_bd_3.png,images/bbg_bd.png,175.0,right
+images/bbg_bd_4.png,images/bbg_bd.png,155.0,left
+images/bbg_bd_5.png,images/bbg_bd.png,135.0,up
+images/bbg_bd_6.png,images/bbg_bd.png,115.0,down
+images/bbg_bd_7.png,images/bbg_bd.png,95.0,right
+images/bbg_bd_8.png,images/bbg_bd.png,75.0,down
+images/bbg_bd_9.png,images/bbg_bd.png,55.0,right
