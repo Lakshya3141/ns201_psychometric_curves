@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.2.10),
-    on December 09, 2020, at 03:29
+    on December 09, 2020, at 09:39
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -51,7 +51,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expNa
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='C:\\Users\\chauh\\Documents\\GitHub\\ns201_psychometric_curves\\experiment_setup_lastrun.py',
+    originPath='C:\\Users\\chauh\\Documents\\GitHub\\ns201_psychometric_curves\\experiment_setup_ru.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
@@ -143,7 +143,7 @@ right = visual.TextStim(win=win, name='right',
     languageStyle='LTR',
     depth=-7.0);
 center = visual.TextStim(win=win, name='center',
-    text='.',
+    text='0',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -210,7 +210,7 @@ routineTimer.reset()
 trials = data.TrialHandler(nReps=20, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('pbg_ru.csv'),
-    seed=1, name='trials')
+    seed=None, name='trials')
 thisExp.addLoop(trials)  # add the loop to the experiment
 thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
 # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)

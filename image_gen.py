@@ -6,24 +6,21 @@ import os
 from PIL import Image
 import pandas as pd
 
-exp = 0
-num_images = 10
+exp = 1
+num_images = 15
 radius = 0.05 
-epsilon = 1/255 
+epsilon = 1/255
+bg_start = [150.0/255.0, 0.0, 150.0/255.0]
+c_start = [150.0/255.0, 0.0, 150.0/255.0]
 if exp == 0:
     expt_type = "pbg_bu"
     channel = 3
-    bg_start = [150.0/255.0, 0.0, 150.0/255.0]
-    c_start = [150.0/255.0, 0.0, 150.0/255.0]
-    bg_base = "images/{}_0.png".format(expt_type)
     
 elif exp == 1:
     expt_type = "pbg_ru"
     channel = 1
-    bg_start = [150.0/255.0, 0.0, 150.0/255.0]
-    c_start = [150.0/255.0, 0.0, 150.0/255.0]
-    bg_base = "images/{}_0.png".format(expt_type)
 
+bg_base = "images/{}_0.png".format(expt_type)
 
 base = []
 def plot_test(radius: float, colour_c: List, colour_bg: List, 
@@ -40,7 +37,7 @@ def plot_test(radius: float, colour_c: List, colour_bg: List,
         circle = plt.Circle(centers[quad], radius, color=colour_c)
         color_change.append(round(colour_c[channel-1]*255,4))
         colour_c[channel-1] = colour_c[channel-1]+epsilon
-        # print(round(colour_c[channel-1]*255,4))
+        print(round(colour_c[channel-1]*255,4))
         fig, ax = plt.subplots(figsize = [8,8])
         ax.set_facecolor(colour_bg)
         ax.add_artist(circle)
