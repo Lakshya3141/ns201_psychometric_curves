@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.2.10),
-    on December 09, 2020, at 09:40
+    on December 12, 2020, at 22:11
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -80,6 +80,13 @@ defaultKeyboard = keyboard.Keyboard()
 
 # Initialize components for Routine "Instructions"
 InstructionsClock = core.Clock()
+Inst = visual.TextStim(win=win, name='Inst',
+    text="Greetings Participant\nPlease focus continuously at the center of the screen. For every pink screen, a small spot will pop up in one of the directions. If you detect a stimuli, please press the corresponding arrow key. In case you dont spot the stimuli, press 'a'. Once done, the script will stop itself. If you feel uneasy at any point, press 'Esc'. Off you go :)",
+    font='Arial',
+    pos=(0, 0), height=0.03, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
 
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
@@ -157,9 +164,10 @@ routineTimer = core.CountdownTimer()  # to track time remaining of each (non-sli
 
 # ------Prepare to start Routine "Instructions"-------
 continueRoutine = True
+routineTimer.add(15.000000)
 # update component parameters for each repeat
 # keep track of which components have finished
-InstructionsComponents = []
+InstructionsComponents = [Inst]
 for thisComponent in InstructionsComponents:
     thisComponent.tStart = None
     thisComponent.tStop = None
@@ -174,13 +182,30 @@ InstructionsClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
 frameN = -1
 
 # -------Run Routine "Instructions"-------
-while continueRoutine:
+while continueRoutine and routineTimer.getTime() > 0:
     # get current time
     t = InstructionsClock.getTime()
     tThisFlip = win.getFutureFlipTime(clock=InstructionsClock)
     tThisFlipGlobal = win.getFutureFlipTime(clock=None)
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
     # update/draw components on each frame
+    
+    # *Inst* updates
+    if Inst.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+        # keep track of start time/frame for later
+        Inst.frameNStart = frameN  # exact frame index
+        Inst.tStart = t  # local t and not account for scr refresh
+        Inst.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(Inst, 'tStartRefresh')  # time at next scr refresh
+        Inst.setAutoDraw(True)
+    if Inst.status == STARTED:
+        # is it time to stop? (based on global clock, using actual start)
+        if tThisFlipGlobal > Inst.tStartRefresh + 15-frameTolerance:
+            # keep track of stop time/frame for later
+            Inst.tStop = t  # not accounting for scr refresh
+            Inst.frameNStop = frameN  # exact frame index
+            win.timeOnFlip(Inst, 'tStopRefresh')  # time at next scr refresh
+            Inst.setAutoDraw(False)
     
     # check for quit (typically the Esc key)
     if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -203,8 +228,8 @@ while continueRoutine:
 for thisComponent in InstructionsComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-# the Routine "Instructions" was not non-slip safe, so reset the non-slip timer
-routineTimer.reset()
+thisExp.addData('Inst.started', Inst.tStartRefresh)
+thisExp.addData('Inst.stopped', Inst.tStopRefresh)
 
 # set up handler to look after randomisation of conditions etc
 trials = data.TrialHandler(nReps=20, method='random', 

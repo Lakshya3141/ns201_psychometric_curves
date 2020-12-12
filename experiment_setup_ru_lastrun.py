@@ -51,7 +51,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expNa
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='C:\\Users\\chauh\\Documents\\GitHub\\ns201_psychometric_curves\\experiment_setup_ru.py',
+    originPath='C:\\Users\\chauh\\Documents\\GitHub\\ns201_psychometric_curves\\experiment_setup_ru_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file

@@ -277,12 +277,12 @@
       <TextComponent name="Inst">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="disabled" updates="None" val="True" valType="bool"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="font" updates="constant" val="Arial" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
         <Param name="name" updates="None" val="Inst" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
@@ -292,9 +292,9 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="3" valType="code"/>
+        <Param name="stopVal" updates="constant" val="15" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Greetings Participant&amp;#10;&amp;#10;Press enter to continue" valType="extendedStr"/>
+        <Param name="text" updates="constant" val="Greetings Participant&amp;#10;Please focus continuously at the center of the screen. For every pink screen, a small spot will pop up in one of the directions. If you detect a stimuli, please press the corresponding arrow key. In case you dont spot the stimuli, press 'a'. Once done, the script will stop itself. If you feel uneasy at any point, press 'Esc'. Off you go :)" valType="extendedStr"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>

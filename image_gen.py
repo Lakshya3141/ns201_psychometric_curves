@@ -6,10 +6,10 @@ import os
 from PIL import Image
 import pandas as pd
 
-exp = 1
+exp = 0
 num_images = 15
 radius = 0.05 
-epsilon = 1/255
+epsilon = 2/255
 bg_start = [150.0/255.0, 0.0, 150.0/255.0]
 c_start = [150.0/255.0, 0.0, 150.0/255.0]
 if exp == 0:
