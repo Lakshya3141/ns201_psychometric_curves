@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.2.10),
-    on December 12, 2020, at 22:10
+    on December 12, 2020, at 22:49
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -87,7 +87,6 @@ Inst = visual.TextStim(win=win, name='Inst',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
-key_resp_2 = keyboard.Keyboard()
 
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
@@ -165,12 +164,10 @@ routineTimer = core.CountdownTimer()  # to track time remaining of each (non-sli
 
 # ------Prepare to start Routine "Instructions"-------
 continueRoutine = True
+routineTimer.add(15.000000)
 # update component parameters for each repeat
-key_resp_2.keys = []
-key_resp_2.rt = []
-_key_resp_2_allKeys = []
 # keep track of which components have finished
-InstructionsComponents = [Inst, key_resp_2]
+InstructionsComponents = [Inst]
 for thisComponent in InstructionsComponents:
     thisComponent.tStart = None
     thisComponent.tStop = None
@@ -185,7 +182,7 @@ InstructionsClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
 frameN = -1
 
 # -------Run Routine "Instructions"-------
-while continueRoutine:
+while continueRoutine and routineTimer.getTime() > 0:
     # get current time
     t = InstructionsClock.getTime()
     tThisFlip = win.getFutureFlipTime(clock=InstructionsClock)
@@ -201,28 +198,14 @@ while continueRoutine:
         Inst.tStartRefresh = tThisFlipGlobal  # on global time
         win.timeOnFlip(Inst, 'tStartRefresh')  # time at next scr refresh
         Inst.setAutoDraw(True)
-    
-    # *key_resp_2* updates
-    waitOnFlip = False
-    if key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-        # keep track of start time/frame for later
-        key_resp_2.frameNStart = frameN  # exact frame index
-        key_resp_2.tStart = t  # local t and not account for scr refresh
-        key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(key_resp_2, 'tStartRefresh')  # time at next scr refresh
-        key_resp_2.status = STARTED
-        # keyboard checking is just starting
-        waitOnFlip = True
-        win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
-        win.callOnFlip(key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
-    if key_resp_2.status == STARTED and not waitOnFlip:
-        theseKeys = key_resp_2.getKeys(keyList=['enter'], waitRelease=False)
-        _key_resp_2_allKeys.extend(theseKeys)
-        if len(_key_resp_2_allKeys):
-            key_resp_2.keys = _key_resp_2_allKeys[-1].name  # just the last key pressed
-            key_resp_2.rt = _key_resp_2_allKeys[-1].rt
-            # a response ends the routine
-            continueRoutine = False
+    if Inst.status == STARTED:
+        # is it time to stop? (based on global clock, using actual start)
+        if tThisFlipGlobal > Inst.tStartRefresh + 15-frameTolerance:
+            # keep track of stop time/frame for later
+            Inst.tStop = t  # not accounting for scr refresh
+            Inst.frameNStop = frameN  # exact frame index
+            win.timeOnFlip(Inst, 'tStopRefresh')  # time at next scr refresh
+            Inst.setAutoDraw(False)
     
     # check for quit (typically the Esc key)
     if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -247,17 +230,6 @@ for thisComponent in InstructionsComponents:
         thisComponent.setAutoDraw(False)
 thisExp.addData('Inst.started', Inst.tStartRefresh)
 thisExp.addData('Inst.stopped', Inst.tStopRefresh)
-# check responses
-if key_resp_2.keys in ['', [], None]:  # No response was made
-    key_resp_2.keys = None
-thisExp.addData('key_resp_2.keys',key_resp_2.keys)
-if key_resp_2.keys != None:  # we had a response
-    thisExp.addData('key_resp_2.rt', key_resp_2.rt)
-thisExp.addData('key_resp_2.started', key_resp_2.tStartRefresh)
-thisExp.addData('key_resp_2.stopped', key_resp_2.tStopRefresh)
-thisExp.nextEntry()
-# the Routine "Instructions" was not non-slip safe, so reset the non-slip timer
-routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
 trials = data.TrialHandler(nReps=20, method='random', 
